@@ -1,0 +1,4 @@
+/configs/workstation/generic/hosts/hosts_active.ini
+
+/configs/workstation/generic/nginx/linked_dir/server_vhosts/closed
+/configs/workstation/generic/nginx/linked_dir/server_vhosts/open/templates/under_consideration

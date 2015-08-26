@@ -1,0 +1,32 @@
+# Pass the PHP scripts to FastCGI server
+
+location ~ \.php$ {
+#    try_files $uri =404;
+#    fastcgi_split_path_info ^(.+\.php)(/.+)$;
+#    include fastcgi_params;
+#    fastcgi_param SCRIPT_FILENAME /usr/share/nginx/html$fastcgi_script_name;
+
+           # fastcgi_pass 127.0.0.1:9000;
+
+    include         includes/default/active/fastcgi.conf;
+    fastcgi_pass    unix:/run/php-fpm/php-fpm.sock;
+    fastcgi_index   index.php;
+}
+
+#···············································································
+# from the VPS:
+#···············································································
+# Pass the PHP scripts to FastCGI server
+
+#location ~ \.php$ {
+#  try_files $uri =404;
+#  fastcgi_split_path_info ^(.+\.php)(/.+)$;
+
+#  fastcgi_pass unix:/run/php-fpm/php-fpm.sock;
+                  # fastcgi_pass 127.0.0.1:9000;
+
+#  fastcgi_index index.php;
+
+#  include fastcgi.conf;
+#  include fastcgi_params;
+#}

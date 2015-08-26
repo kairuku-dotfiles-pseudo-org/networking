@@ -1,0 +1,17 @@
+server {
+
+    # PLACEHOLDERS TO BE OVERWRITTEN BY SED IN SCAFFOLDING UTILITY
+
+    include     includes_local/custom/php_laravel_conf.nginx;
+    listen      80;
+    server_name APPNAME;
+
+    # DO NOT PUT ROOT DIRECTIVE INSIDE LOCATION BLOCK
+    root APPROOT;
+
+    location / {
+        index  index.html index.htm index.php;
+        try_files $uri $uri/ /index.php?$query_string;
+    }   # END LOCATION BLOCK
+
+}   # END SERVER BLOCK
